@@ -1,0 +1,37 @@
+.NotesForm {
+  margin: 1em auto;
+  width: 50%;
+  max-width: 500px;
+
+  input {
+    display: block;
+    align-self: center;
+    width: 50%;
+    max-width: 250px;
+    margin: auto;
+    padding: 0.4em;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    max-height: 250px;
+    margin: 0.5em;
+    padding: 0.4em;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin: 0.5em;
+    padding: 0.4em;
+    border: 0;
+
+    background-color: #2D1050;
+    color: #E9E2E4;
+
+    font-weight: 700;
+  }
+}
