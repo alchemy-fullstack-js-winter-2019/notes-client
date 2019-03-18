@@ -14,9 +14,9 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new CopyPlugin({
+    new CopyPlugin([{
       from: 'public'
-    }),
+    }]),
     new Dotenv({ systemvars: true }),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanPlugin('./dist')
