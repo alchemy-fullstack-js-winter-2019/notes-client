@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         list: [],
         loading: false,
-        error: action.payload
+        error: action.payload.message
       };
     case UPDATE_TITLE:
       return {

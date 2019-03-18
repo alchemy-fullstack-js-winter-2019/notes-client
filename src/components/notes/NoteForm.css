@@ -34,4 +34,34 @@
 
     font-weight: 700;
   }
+
+  button:disabled {
+    background-color: rgba(80,29,144, 0.4);
+    cursor: wait;
+  }
+
+  .error {
+    padding: 0.4em 1em;
+    margin: 1em;
+    border-radius: 0.4em;
+
+    background-color: #A91310;
+    color: #E9E2E4;
+  }
+
+  .spinner {
+    display: block;
+
+    animation: spinnerAnimation 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes spinnerAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
