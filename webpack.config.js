@@ -13,7 +13,7 @@ module.exports = {
     historyApiFallback: true
   },
   plugins: [
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     new HtmlPlugin({ template: './src/index.html' }),
     new CleanPlugin('./dist')
   ],
