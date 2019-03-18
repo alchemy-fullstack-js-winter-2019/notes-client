@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Header.css';
 
 export function Header() {
   return (
     <header className={styles.Header}>
-      <h1>Notes</h1>
+      <h1>
+        <Link to="/">Notes</Link>
+      </h1>
     </header>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './Notes.css';
 import NoteSpinner from './NoteSpinner';
 
@@ -8,9 +9,12 @@ function Notes({ notes }) {
     return (
       <li key={note._id}>
         <NoteSpinner loading={note.isPending}>
-          <h2>{note.title}</h2>
-          <p>{note.body}</p>
+          <Link to={`/notes/${note._id}`}>
+            <h2>{note.title}</h2>
+            <p>{note.body}</p>
+          </Link>
         </NoteSpinner>
+
       </li>
     );
   });

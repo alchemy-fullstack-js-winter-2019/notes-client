@@ -10,3 +10,8 @@
 body {
   background-color: #E9E2E4;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

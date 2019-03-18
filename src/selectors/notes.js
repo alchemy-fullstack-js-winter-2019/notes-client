@@ -1,4 +1,7 @@
-export const getNotesError = state => state.notes.error;
+export const getNotesError = state => {
+  if(state.notes.error) return state.notes.error.error || state.notes.error.message;
+  return null;
+};
 export const isNotesLoading = state => state.notes.loading;
 
 export const getNotes = state => {

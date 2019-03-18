@@ -1,0 +1,13 @@
+.Note {
+  display: block;
+  margin: auto;
+
+  h2 {
+    padding: 0.2em 0;
+    color: #B16FB1;
+  }
+
+  textarea {
+    line-height: 1.5em;
+  }
+}
