@@ -1,7 +1,7 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const CopyPlugin = require('copy-web');
+const CopyPlugin = require('copy-web-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
