@@ -1,11 +1,11 @@
-import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_ERROR, UPDATE_TITLE, UPDATE_BODY } from '../actions/notes';
+import { FETCH_NOTES } from '../actions/notes';
+import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_FULFILLED } from '../actions/noteDetails';
 
 const initialState = {
   list: [],
+  pendingNote: false,
   loading: false,
   error: null,
-  title: '',
-  body: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -14,28 +14,22 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         list: [...state.list, action.payload],
-        loading: false,
-        title: '',
-        body: ''
+        loading: false
       };
     case CREATE_NOTE_PENDING:
-      return { ...state, loading: true };
-    case CREATE_NOTE_ERROR:
       return {
         ...state,
-        list: [],
-        loading: false,
-        error: action.payload.message
+        pendingNote: true
       };
-    case UPDATE_TITLE:
+    case CREATE_NOTE_FULFILLED:
       return {
         ...state,
-        title: action.payload
+        pendingNote: false
       };
-    case UPDATE_BODY:
+    case FETCH_NOTES:
       return {
         ...state,
-        body: action.payload
+        list: action.payload
       };
     default:
       return state;

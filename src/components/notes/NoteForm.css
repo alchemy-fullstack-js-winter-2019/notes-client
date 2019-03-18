@@ -33,6 +33,8 @@
     color: #E9E2E4;
 
     font-weight: 700;
+
+    cursor: pointer;
   }
 
   button:disabled {
@@ -47,21 +49,5 @@
 
     background-color: #A91310;
     color: #E9E2E4;
-  }
-
-  .spinner {
-    display: block;
-
-    animation: spinnerAnimation 1.5s ease-in-out infinite alternate;
-  }
-
-  @keyframes spinnerAnimation {
-    from {
-      transform: rotate(0deg);
-    }
-
-    to {
-      transform: rotate(360deg);
-    }
   }
 }

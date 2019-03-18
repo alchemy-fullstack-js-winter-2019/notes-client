@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import NoteForm from '../../components/notes/NoteForm';
-import { createNote, updateTitle, updateBody } from '../../actions/notes';
-import { getTitle, getBody, getError, isLoading } from '../../selectors/notes';
+import { createNote, updateTitle, updateBody } from '../../actions/noteDetails';
+import { getNoteDetailsError, isNoteDetailsLoading, getTitle, getBody } from '../../selectors/noteDetails';
 
 const mapStateToProps = state => ({
   title: getTitle(state),
   body: getBody(state),
-  error: getError(state),
-  loading: isLoading(state)
+  error: getNoteDetailsError(state),
+  loading: isNoteDetailsLoading(state)
 });
 
 const mapDispatchToProps = dispatch => ({

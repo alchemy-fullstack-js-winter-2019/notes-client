@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaAsterisk } from 'react-icons/fa';
 import styles from './NoteForm.css';
+import NoteSpinner from './NoteSpinner';
 
 function NotesForm({ title, body, error, loading, createNote, titleChange, bodyChange }) {
   return (
@@ -21,7 +22,9 @@ function NotesForm({ title, body, error, loading, createNote, titleChange, bodyC
         onChange={bodyChange}
       ></textarea>
       <button disabled={loading}>
-        <span className={loading ? styles.spinner : ''}>{loading ? <FaAsterisk /> : 'Create'}</span>
+        <NoteSpinner loading={loading}>
+          <span>Create</span>
+        </NoteSpinner>
       </button>
     </form>
   );
