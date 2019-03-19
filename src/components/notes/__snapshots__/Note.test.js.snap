@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note tests matches a snapshot 1`] = `
+<article
+  className="Note"
+>
+  <h2>
+    My Title
+  </h2>
+  <pre>
+    A body
+  </pre>
+</article>
+`;

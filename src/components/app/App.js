@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import { Header } from '../header/Header';
+import Header from '../header/Header';
 import Home from '../../pages/Home';
 import NoteDetailsPage from '../../pages/NoteDetailsPage';
 import styles from './App.css';
