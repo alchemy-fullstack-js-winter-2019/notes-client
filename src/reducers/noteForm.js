@@ -9,6 +9,7 @@ import {
   UPDATE_TITLE,
   UPDATE_BODY
 } from '../actions/noteForm';
+import { FETCH_NOTE_DETAILS } from '../actions/noteDetails';
 
 const initialState = {
   loading: false,
@@ -44,6 +45,12 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         body: action.payload
+      };
+    case FETCH_NOTE_DETAILS:
+      return {
+        ...state,
+        title: action.payload.title,
+        body: action.payload.body
       };
     default:
       return state;

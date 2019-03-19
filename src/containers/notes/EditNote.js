@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
   clear() {
     dispatch(clearForm());
-    dispatch(clearDetails);
+    dispatch(clearDetails());
   },
   handleSubmit(title, body, event) {
     event.preventDefault();
