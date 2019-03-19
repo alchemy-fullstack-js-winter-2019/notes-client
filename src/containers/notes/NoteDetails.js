@@ -12,7 +12,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, props) => ({
   fetch() {
-    console.log('heheeheheh');
     dispatch(fetchNoteDetails(props.match.params.id));
   }
 });

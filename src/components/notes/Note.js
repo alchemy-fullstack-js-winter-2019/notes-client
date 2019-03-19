@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Note.css';
 
 function Note({ title, body }) {
   return (
-    <>
+    <article className={styles.Note}>
       <h2>{title}</h2>
-      <textarea disabled value={body}></textarea>
-    </>
+      <pre>{body}</pre>
+    </article>
   );
 }
 

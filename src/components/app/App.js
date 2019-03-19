@@ -7,16 +7,19 @@ import {
 import { Header } from '../header/Header';
 import Home from '../../pages/Home';
 import NoteDetailsPage from '../../pages/NoteDetailsPage';
+import styles from './App.css';
 
 export default function App() {
   return (
     <Router>
       <>
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/notes/:id" component={NoteDetailsPage} />
-        </Switch>
+        <main className={styles.App}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/notes/:id" component={NoteDetailsPage} />
+          </Switch>
+        </main>
       </>
     </Router>
   );
