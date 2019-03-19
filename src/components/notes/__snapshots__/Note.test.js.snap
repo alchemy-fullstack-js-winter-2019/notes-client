@@ -12,7 +12,7 @@ exports[`Note tests matches a snapshot 1`] = `
   </pre>
   <Link
     replace={false}
-    to="/notes/undefined/edit"
+    to="/notes/1234/edit"
   >
     <FaPen />
   </Link>

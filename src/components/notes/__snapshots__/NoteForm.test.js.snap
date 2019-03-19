@@ -1,3 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Note tests matches a snapshot 1`] = `undefined`;
+exports[`Note tests matches a snapshot 1`] = `
+<form
+  className="NotesForm"
+  onSubmit={[Function]}
+>
+  <input
+    name="title"
+    onChange={[MockFunction]}
+    placeholder="Note Title"
+    type="text"
+    value="My Title"
+  />
+  <textarea
+    name="body"
+    onChange={[MockFunction]}
+    value="A body"
+  />
+  <button
+    disabled={false}
+  >
+    <NoteSpinner
+      loading={false}
+    >
+      <span>
+        Create
+      </span>
+    </NoteSpinner>
+  </button>
+</form>
+`;

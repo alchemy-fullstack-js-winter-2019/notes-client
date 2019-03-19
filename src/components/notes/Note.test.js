@@ -5,9 +5,9 @@ import Note from './Note';
 describe('Note tests', () => {
   it('matches a snapshot', () => {
     expect(shallow(
-      <Note title="My Title" body="A body" />
+      <Note id="1234" title="My Title" body="A body" />
     )).toMatchSnapshot();
   });
 
-  
+
 });
