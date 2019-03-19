@@ -1,8 +1,16 @@
-import { fetchNotes, FETCH_NOTES, FETCH_NOTES_PENDING, FETCH_NOTES_FULFILLED, FETCH_NOTES_ERROR } from './notes';
+import {
+  fetchNotes,
+  FETCH_NOTES,
+  FETCH_NOTES_PENDING,
+  FETCH_NOTES_FULFILLED,
+  FETCH_NOTES_ERROR
+} from './notes';
 
 jest.mock('../services/notes.js', () => ({
   getNotes: () => Promise.resolve()
 }));
+
+jest.mock('../services/auth.js');
 
 describe('notes action creators', () => {
   it('creates a FETCH_NOTES action', () => {

@@ -1,5 +1,4 @@
-export const getTitle = state => state.noteDetails.title;
-export const getBody = state => state.noteDetails.body;
+export const getNoteDetails = state => state.noteDetails.note;
 export const getNoteDetailsError = state => {
   if(state.noteDetails.error) return state.noteDetails.error.error || state.noteDetails.error.message;
   return null;

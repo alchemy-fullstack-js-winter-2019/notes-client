@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getTitle, getBody } from '../../selectors/noteDetails';
 import { fetchNoteDetails, clearDetails } from '../../actions/noteDetails';
 import { withFetch } from '../../components/withFetch';
 import Note from '../../components/notes/Note';
+import { getNoteDetails } from '../../selectors/noteDetails';
 
-const mapStateToProps = (state, props) => ({
-  id: props.match.params.id,
-  title: getTitle(state),
-  body: getBody(state)
+const mapStateToProps = state => ({
+  note: getNoteDetails(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

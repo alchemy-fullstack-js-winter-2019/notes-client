@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { FaPen } from 'react-icons/fa';
 import styles from './Note.css';
 
-function Note({ id, title, body }) {
+function Note({ note }) {
+  const { _id, title, body } = note;
   return (
     <article className={styles.Note}>
       <h2>{title}</h2>
       <pre>{body}</pre>
-      <Link to={`/notes/${id}/edit`}>
+      <Link to={`/notes/${_id}/edit`}>
         <FaPen />
       </Link>
     </article>
@@ -17,9 +18,7 @@ function Note({ id, title, body }) {
 }
 
 Note.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired
+  note: PropTypes.object.isRequired
 };
 
 export default Note;

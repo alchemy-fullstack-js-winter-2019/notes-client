@@ -4,8 +4,14 @@ import Note from './Note';
 
 describe('Note tests', () => {
   it('matches a snapshot', () => {
+    const note = {
+      _id: '1234',
+      author: 'test.user',
+      title: 'My Title',
+      body: 'My Body'
+    };
     expect(shallow(
-      <Note id="1234" title="My Title" body="A body" />
+      <Note note={note} />
     )).toMatchSnapshot();
   });
 

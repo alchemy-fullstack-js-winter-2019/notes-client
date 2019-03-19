@@ -1,6 +1,9 @@
 import reducer from './notes';
-import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_FULFILLED } from '../actions/noteDetails';
 import { FETCH_NOTES } from '../actions/notes';
+import { CREATE_NOTE, CREATE_NOTE_PENDING, CREATE_NOTE_FULFILLED } from '../actions/noteForm';
+
+jest.mock('../services/auth.js');
+jest.mock('../services/notes.js');
 
 describe('notes reducer', () => {
   let state;
