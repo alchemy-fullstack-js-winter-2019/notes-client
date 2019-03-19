@@ -9,7 +9,8 @@ import {
   FETCH_NOTE_DETAILS_ERROR,
   CLEAR_DETAILS,
   UPDATE_NOTE,
-  UPDATE_NOTE_PENDING
+  UPDATE_NOTE_PENDING,
+  UPDATE_NOTE_ERROR
 } from '../actions/noteDetails';
 
 const initialState = {
@@ -28,8 +29,10 @@ export default function reducer(state = initialState, action) {
         title: '',
         body: ''
       };
+    case UPDATE_NOTE_PENDING:
     case CREATE_NOTE_PENDING:
       return { ...state, loading: true };
+    case UPDATE_NOTE_ERROR:
     case CREATE_NOTE_ERROR:
       return {
         ...state,

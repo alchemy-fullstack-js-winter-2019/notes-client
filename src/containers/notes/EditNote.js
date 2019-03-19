@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getBody, getTitle } from '../../selectors/noteDetails';
+import { getBody, getTitle, getNoteDetailsError, isNoteDetailsLoading } from '../../selectors/noteDetails';
 import { updateTitle, updateBody, updateNote, fetchNoteDetails, clearDetails } from '../../actions/noteDetails';
 import NotesForm from '../../components/notes/NoteForm';
 import { withFetch } from '../../components/withFetch';
 
 const mapStateToProps = state => ({
+  submitText: 'Edit',
   title: getTitle(state),
   body: getBody(state),
-  error: null,
-  loading: false
+  error: getNoteDetailsError(state),
+  loading: isNoteDetailsLoading(state)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -21,7 +22,12 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
   handleSubmit(title, body, event) {
     event.preventDefault();
-    dispatch(updateNote(props.match.params.id, { title, body }));
+    const action = updateNote(props.match.params.id, { title, body });
+    dispatch(action);
+
+    action.payload.then(() => {
+      props.history.replace('/');
+    });
   },
   titleChange({ target }) {
     dispatch(updateTitle(target.value));
