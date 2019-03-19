@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createNote(title, body, event) {
+  handleSubmit(title, body, event) {
     event.preventDefault();
     dispatch(createNote({ title, body }));
   },

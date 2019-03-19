@@ -10,5 +10,11 @@ exports[`Note tests matches a snapshot 1`] = `
   <pre>
     A body
   </pre>
+  <Link
+    replace={false}
+    to="/notes/undefined/edit"
+  >
+    <FaPen />
+  </Link>
 </article>
 `;

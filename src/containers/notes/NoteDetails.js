@@ -5,7 +5,8 @@ import { fetchNoteDetails, clearDetails } from '../../actions/noteDetails';
 import { withFetch } from '../../components/withFetch';
 import Note from '../../components/notes/Note';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, props) => ({
+  id: props.match.params.id,
   title: getTitle(state),
   body: getBody(state)
 });

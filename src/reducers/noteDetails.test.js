@@ -8,7 +8,8 @@ import {
   FETCH_NOTE_DETAILS,
   FETCH_NOTE_DETAILS_PENDING,
   FETCH_NOTE_DETAILS_ERROR,
-  CLEAR_DETAILS
+  CLEAR_DETAILS,
+  UPDATE_NOTE
 } from '../actions/noteDetails';
 
 describe('noteDetails reducer', () => {
@@ -130,6 +131,23 @@ describe('noteDetails reducer', () => {
       body: '',
       error: null,
       loading: false
+    });
+  });
+
+  it('handles the UPDATE_NOTE action', () => {
+    const updatedState = reducer(state, {
+      type: UPDATE_NOTE,
+      payload: {
+        title: 'My Updated Title',
+        body: 'My updated body'
+      }
+    });
+
+    expect(updatedState).toEqual({
+      loading: false,
+      error: null,
+      title: 'My Updated Title',
+      body: 'My updated body'
     });
   });
 });

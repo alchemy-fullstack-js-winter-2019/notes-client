@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postNote, getNote } from '../services/notes';
+import { postNote, getNote, putNote } from '../services/notes';
 
 export const [
   createNote,
@@ -8,6 +8,14 @@ export const [
   CREATE_NOTE_FULFILLED,
   CREATE_NOTE_ERROR
 ] = createAction('CREATE_NOTE', postNote);
+
+export const [
+  updateNote,
+  UPDATE_NOTE,
+  UPDATE_NOTE_PENDING,
+  UPDATE_NOTE_FULFILLED,
+  UPDATE_NOTE_ERROR
+] = createAction('UPDATE_NOTE', putNote);
 
 export const UPDATE_TITLE = 'UPDATE_TITLE';
 export const updateTitle = title => ({

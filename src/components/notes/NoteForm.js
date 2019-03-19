@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaAsterisk } from 'react-icons/fa';
 import styles from './NoteForm.css';
 import NoteSpinner from './NoteSpinner';
 
-function NotesForm({ title, body, error, loading, createNote, titleChange, bodyChange }) {
+function NotesForm({ title, body, error, loading, handleSubmit, titleChange, bodyChange }) {
   return (
-    <form className={styles.NotesForm} onSubmit={createNote.bind(null, title, body)}>
+    <form className={styles.NotesForm} onSubmit={handleSubmit.bind(null, title, body)}>
       {error && <section className={styles.error}>
         <p>Error: {error}</p>
       </section>}
@@ -35,7 +34,7 @@ NotesForm.propTypes = {
   loading: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  createNote: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   titleChange: PropTypes.func.isRequired,
   bodyChange: PropTypes.func.isRequired
 };
