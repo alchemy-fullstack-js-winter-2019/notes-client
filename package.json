@@ -25,7 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "auth0-js": "^9.10.0",
+    "auth0-js": "^9.10.1",
     "normalize.css": "^8.0.1",
     "promise-middleware-redux": "^1.0.5",
     "react": "^16.8.2",
